@@ -1,5 +1,9 @@
 package com.uz.karolis.kotlinmoviebacklog.view.BackloggedMoviesFragment
 
+import android.app.Application
+import android.arch.lifecycle.LifecycleOwner
+import android.arch.lifecycle.Observer
+import android.support.v7.widget.CardView
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +12,10 @@ import android.widget.TextView
 import com.uz.karolis.kotlinmoviebacklog.R
 
 import com.uz.karolis.kotlinmoviebacklog.domain.Movie
+import io.reactivex.Observable
+import io.reactivex.Scheduler
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 
 import kotlinx.android.synthetic.main.fragment_backloggedmovie.view.*
 
@@ -54,7 +62,7 @@ class BackloggedMovieRecyclerViewAdapter(
     inner class ViewHolder(val mView: View) : RecyclerView.ViewHolder(mView) {
         val mIdView: TextView = mView.item_number
         val mContentView: TextView = mView.content
-
+        //val mMovieCard: CardView
         override fun toString(): String {
             return super.toString() + " '" + mContentView.text + "'"
         }

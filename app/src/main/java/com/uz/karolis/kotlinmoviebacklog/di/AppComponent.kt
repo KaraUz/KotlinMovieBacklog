@@ -2,6 +2,7 @@ package com.uz.karolis.kotlinmoviebacklog.di
 
 import com.squareup.picasso.Picasso
 import com.uz.karolis.kotlinmoviebacklog.view.BackloggedMoviesFragment.BackloggedMovieFragment
+import com.uz.karolis.kotlinmoviebacklog.view.BackloggedMoviesFragment.BackloggedMovieViewModel
 import dagger.Component
 import retrofit2.Retrofit
 import javax.inject.Singleton
@@ -14,7 +15,7 @@ import javax.inject.Singleton
         PicassoModule::class))
 @Singleton
 interface AppComponent {
-    fun inject(backloggedMovieFragment: BackloggedMovieFragment)
+    fun inject(backloggedMovieViewModel: BackloggedMovieViewModel)
 
     fun getPicasso(): Picasso
 }
